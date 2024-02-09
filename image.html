@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <script>
+    let params = (new URL(document.location)).searchParams;
+    let url = params.get("image");
+    var meta = document.createElement('meta');
+    meta.name = "twitter:image";
+    meta.content = url;
+    document.getElementsByTagName('head')[0].appendChild(meta);
+  </script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +23,19 @@
   <meta name="twitter:site" content="@forge">
   <meta name="twitter:creator" content="@forge">
   <meta name="twitter:title" content="Forge Recap">
-  <meta name="twitter:image" content="https://cdn.mos.cms.futurecdn.net/tX7jvJMNT4CWjKQfcWAWyC.jpg">
+
+  <!-- <meta name="twitter:image" content="https://cdn.mos.cms.futurecdn.net/tX7jvJMNT4CWjKQfcWAWyC.jpg"> -->
 </head>
 
 <body cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="14.1154.0" data-gr-ext-installed="">
-  <img src="https://cdn.mos.cms.futurecdn.net/tX7jvJMNT4CWjKQfcWAWyC.jpg">
+  <img src="" id="image">
+
+  <script>
+    window.onload = function () {
+      document.getElementById('image').src = url;
+    };
+  </script>
+
 
 </body>
 
