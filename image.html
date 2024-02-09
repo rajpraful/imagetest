@@ -3,8 +3,9 @@
 
 <head>
   <script>
-    let params = (new URL(document.location)).searchParams;
-    let url = params.get("image");
+    const searchParams = new URLSearchParams(window.location.search);
+    console.log('searchParams', searchParams.get("image"))
+    let url = searchParams.get("image");
     var meta = document.createElement('meta');
     meta.name = "twitter:image";
     meta.content = url;
